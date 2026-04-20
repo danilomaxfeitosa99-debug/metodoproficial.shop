@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Łyżka miodu rano — i to, co dzieje się potem w mózgu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#0a0a0a;color:#ddd;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+/* === HERO === */
+.hero{position:relative;width:100%;max-height:420px;overflow:hidden}
+.hero img{width:100%;height:420px;object-fit:cover;cursor:pointer}
+.hero-grad{position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(transparent,#0a0a0a)}
+
+/* === CONTAINER === */
+.w{max-width:620px;margin:0 auto;padding:0 20px}
+
+/* === HEADLINE === */
+.hl{padding:16px 0 6px;text-align:center}
+.hl-tag{display:inline-block;background:rgba(207,163,70,.12);color:#cfa346;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:3px;border:1px solid rgba(207,163,70,.25);margin-bottom:10px}
+.hl h1{font-family:'Playfair Display',serif;font-size:25px;line-height:1.3;color:#fff;font-weight:800}
+.hl h1 em{color:#cfa346;font-style:normal}
+.hl-sub{font-size:13px;color:#888;font-weight:300;margin-top:6px;line-height:1.5}
+
+/* === CTA PRINCIPAL === */
+.cta-main{margin:16px 0;padding:20px;background:linear-gradient(135deg,#cfa346,#a07c28);border-radius:10px;text-align:center;box-shadow:0 8px 35px rgba(207,163,70,.2)}
+.cta-main h2{font-family:'Playfair Display',serif;font-size:18px;color:#0a0a0a;font-weight:800;margin-bottom:4px;line-height:1.3}
+.cta-main p{font-size:12px;color:rgba(10,10,10,.6);margin-bottom:12px;font-weight:300}
+.btn{display:inline-block;background:#0a0a0a;color:#cfa346;padding:14px 44px;font-size:14px;font-weight:600;text-decoration:none;border-radius:6px;transition:all .25s;box-shadow:0 4px 15px rgba(0,0,0,.4);letter-spacing:.3px}
+.btn:hover{background:#fff;color:#0a0a0a;transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
+.cta-main small{display:block;margin-top:6px;font-size:8px;color:rgba(10,10,10,.35)}
+
+/* === BODY TEXT === */
+.txt{padding:14px 0}
+.txt p{font-size:14px;color:#bbb;font-weight:300;line-height:1.85;margin-bottom:12px}
+.txt strong{color:#fff;font-weight:500}
+.txt em{color:#cfa346;font-style:normal;font-weight:400}
+
+/* === QUESTION BREAK === */
+.qbreak{text-align:center;padding:10px 0;margin:4px 0}
+.qbreak h3{font-family:'Playfair Display',serif;font-size:19px;color:#fff;font-weight:800;line-height:1.35}
+.qbreak h3 em{color:#cfa346;font-style:normal}
+
+/* === IMAGE + TESTIMONIAL === */
+.testi{margin:14px 0;border-radius:8px;overflow:hidden;position:relative}
+.testi img{width:100%;cursor:pointer;transition:transform .3s}.testi img:hover{transform:scale(1.02)}
+.testi-overlay{position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(transparent,rgba(0,0,0,.85) 30%)}
+.testi-text{font-family:'Playfair Display',serif;font-size:14px;color:#eee;font-style:italic;line-height:1.55;margin-bottom:4px}
+.testi-name{font-family:'DM Sans',sans-serif;font-size:10px;color:#cfa346;font-weight:500;font-style:normal}
+
+/* === REVEAL LIST === */
+.reveal{margin:14px 0;background:#121212;border-radius:8px;overflow:hidden;border:1px solid #222}
+.reveal-title{padding:12px 16px;font-family:'Playfair Display',serif;font-size:14px;color:#cfa346;font-weight:600;border-bottom:1px solid #222}
+.rev-item{padding:10px 16px;border-bottom:1px solid #1a1a1a;display:flex;gap:10px;align-items:flex-start}
+.rev-item:last-child{border-bottom:none}
+.rev-icon{color:#cfa346;font-size:14px;flex-shrink:0;margin-top:1px}
+.rev-text{font-size:12.5px;color:#bbb;font-weight:300;line-height:1.55}
+.rev-text strong{color:#fff;font-weight:500}
+
+/* === DARK QUOTE === */
+.dquote{margin:14px 0;padding:14px 18px;border-left:3px solid #cfa346;background:#121212;border-radius:0 6px 6px 0}
+.dquote p{font-family:'Playfair Display',serif;font-size:14px;color:#ddd;font-style:italic;line-height:1.6;margin:0}
+
+/* === CTA BOTTOM === */
+.cta-bot{margin:16px 0;padding:20px;background:#121212;border-radius:8px;text-align:center;border:1px solid #cfa346}
+.cta-bot h3{font-family:'Playfair Display',serif;font-size:16px;color:#fff;margin-bottom:3px;font-weight:800}
+.cta-bot p{font-size:11px;color:#777;margin-bottom:12px;font-weight:300}
+.cta-bot .btn{background:#cfa346;color:#0a0a0a}
+.cta-bot .btn:hover{background:#fff;color:#0a0a0a}
+.cta-bot small{display:block;margin-top:6px;font-size:7.5px;color:#555}
+
+/* === DISCLAIMER === */
+.disc{font-size:8px;color:#555;margin:14px 0;padding:10px 12px;background:#0e0e0e;border-radius:4px;line-height:1.6;border:1px solid #1a1a1a}
+
+/* === FOOTER === */
+footer{padding:16px 20px 30px;text-align:center;font-size:8px;color:#444}
+footer a{color:#cfa346;text-decoration:none}footer a:hover{text-decoration:underline}
+
+@media(max-width:600px){
+.hl h1{font-size:20px}
+.qbreak h3{font-size:16px}
+.cta-main h2{font-size:15px}
+.hero img{height:320px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<a href="https://lp.metodoproficial.shop/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/mem_poland3-honey-dark-dramatic-ien76tTJSeiQASmXd9nRzh.webp" alt="Miód lipowy w miseczce ceramicznej"></a>
+<div class="hero-grad"></div>
+</section>
+
+<div class="w">
+
+<!-- HEADLINE -->
+<div class="hl">
+<span class="hl-tag">Zaskakujące odkrycie · 2026</span>
+<h1>Łyżka miodu rano — i to, co dzieje się potem <em>w mózgu</em></h1>
+<p class="hl-sub">Prosty składnik kuchenny, który nie działa tak, jak myśleliśmy.</p>
+</div>
+
+<!-- CTA PRINCIPAL -->
+<div class="cta-main">
+<h2>&#9654; Zobacz, co odkryto na temat związku miodu z pamięcią</h2>
+<p>Krótki film, który wszystko wyjaśnia</p>
+<a href="https://lp.metodoproficial.shop/preclick" class="btn">Obejrzyj film teraz &rarr;</a>
+<small>Bezpłatna treść informacyjna · 3 minuty</small>
+</div>
+
+<!-- BODY -->
+<div class="txt">
+<p>Czy Pan/Pani też zauważył(a), że ostatnio coraz trudniej jest zapamiętać imiona? Że wchodzi Pan/Pani do pokoju i <strong>zapomina, po co tam wszedł(a)?</strong></p>
+
+<p>Większość ludzi uważa, że to normalne. <strong>A co, jeśli tak nie jest?</strong></p>
+
+<p>Pewien <strong>krakowski lekarz</strong> niedawno odkrył zaskakujący związek wśród swoich pacjentów. Ci, którzy spożywali pewną <em>mieszankę miodową</em> rano — <strong>zgłaszali nieoczekiwane zmiany.</strong></p>
+</div>
+
+<!-- QUESTION BREAK -->
+<div class="qbreak">
+<h3>Ale dlaczego właśnie <em>miód?</em><br>I dlaczego trzeba go spożywać <em>właśnie w ten sposób?</em></h3>
+</div>
+
+<!-- BODY -->
+<div class="txt">
+<p>Odpowiedź tkwi w tym, <strong>jak</strong> i <strong>z czym</strong> go spożywamy. Sam w sobie miód to tylko słodzik. Ale kiedy połączymy go z <em>tymi trzema innymi składnikami</em> i weźmiemy <strong>na pusty żołądek, rano</strong> — dzieje się coś zupełnie innego.</p>
+
+<p><strong>Polscy pszczelarze</strong> z Podlasia znają tę mieszankę od pokoleń. Ale dopiero teraz, gdy <strong>polscy lekarze</strong> ją zbadali — <em>zrozumiano, dlaczego działa.</em></p>
+</div>
+
+<!-- IMAGE + TESTIMONIAL -->
+<div class="testi">
+<a href="https://lp.metodoproficial.shop/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/mem_poland3-elderly-polish-woman-MAHtirnz5MqhcoaPEHzZHd.webp" alt="Starsza Polka w tradycyjnej kuchni"></a>
+<div class="testi-overlay">
+<p class="testi-text">„Od trzech miesięcy zaczynam każdy poranek od tego. Od tamtej pory nie szukam kluczy — bo pamiętam, gdzie je położyłam. Moja córka powiedziała: 'Mamo, wyglądasz młodziej niż rok temu.'"</p>
+<p class="testi-name">— Jadwiga Kowalska, 71 lat, Kraków</p>
+</div>
+</div>
+
+<!-- REVEAL LIST -->
+<div class="reveal">
+<div class="reveal-title">Co dowiesz się z filmu:</div>
+<div class="rev-item">
+<span class="rev-icon">&#9670;</span>
+<div class="rev-text">Jaka jest <strong>„ukryta substancja"</strong> w miodzie, która zdaniem naukowców <strong>działa bezpośrednio na komórki mózgowe</strong></div>
+</div>
+<div class="rev-item">
+<span class="rev-icon">&#9670;</span>
+<div class="rev-text"><strong>3 inne składniki</strong>, które „aktywują" działanie miodu — i które <strong>znajdziesz w każdej polskiej kuchni</strong></div>
+</div>
+<div class="rev-item">
+<span class="rev-icon">&#9670;</span>
+<div class="rev-text">Dlaczego <strong>nie działa</strong>, jeśli dodasz miód do herbaty — i jaka jest <strong>prawidłowa metoda</strong></div>
+</div>
+<div class="rev-item">
+<span class="rev-icon">&#9670;</span>
+<div class="rev-text"><strong>Jedyna pora dnia</strong>, w której mieszanka jest <strong>najskuteczniejsza</strong> — i dlaczego</div>
+</div>
+</div>
+
+<!-- DARK QUOTE -->
+<div class="dquote">
+<p>„To nie miód jest sekretem. To jest to, co się dzieje, gdy spożywamy go z odpowiednimi składnikami, o odpowiedniej porze. Tego większość ludzi nie wie — i właśnie to wyjaśniamy w tym filmie."</p>
+</div>
+
+<!-- CTA BOTTOM -->
+<div class="cta-bot">
+<h3>Poznaj pełny przepis — krok po kroku</h3>
+<p>Dokładne składniki · Właściwe proporcje · Idealny moment</p>
+<a href="https://lp.metodoproficial.shop/preclick" class="btn">Obejrzyj film teraz &rarr;</a>
+<small>Bezpłatna treść informacyjna</small>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+<strong>Zastrzeżenie prawne:</strong> Ten artykuł ma charakter wyłącznie informacyjny i nie stanowi porady medycznej. Suplementy diety nie zastępują zróżnicowanej diety i zdrowego stylu życia. Wyniki mogą się różnić w zależności od osoby. Przed wprowadzeniem jakichkolwiek zmian w diecie należy skonsultować się z lekarzem. Opinie wyrażone w artykule odzwierciedlają osobiste doświadczenia czytelników.
+</div>
+
+</div>
+
+<footer>
+<p><a href="privacy.html">Polityka prywatności</a> &middot; <a href="terms.html">Regulamin</a></p>
+<p style="margin-top:3px">© 2026 &middot; CNPJ: 65.066.161/0001-23</p>
+</footer>
+
+<script>
+(function(){var q=window.location.search;if(!q)return;document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||h.startsWith('#')||h.startsWith('mailto:'))return;a.setAttribute('href',h.includes('?')?h+'&'+q.substring(1):h+q)})})();
+</script>
+<script type="text/javascript" src="https://lp.metodoproficial.shop/pretrack.js?rtkcmpid=69e67315654181de9957e73f"></script>
+</body>
+</html>
