@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi történik az agyban, ha reggel éhgyomorra mézet eszik?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#0a0a0a;color:#ccc;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+/* HERO */
+.hero{position:relative;width:100%;max-height:380px;overflow:hidden}
+.hero img{width:100%;height:380px;object-fit:cover;cursor:pointer}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(transparent 20%,#0a0a0a 95%)}
+
+/* CONTAINER */
+.w{max-width:620px;margin:0 auto;padding:0 18px}
+
+/* HEADLINE */
+.hl{padding:10px 0 6px;text-align:center}
+.hl .cat{display:inline-block;font-size:8px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#c49a3c;background:rgba(196,154,60,.08);padding:4px 14px;border-radius:3px;border:1px solid rgba(196,154,60,.15);margin-bottom:8px}
+.hl h1{font-family:'DM Serif Display',serif;font-size:23px;line-height:1.3;color:#fff}
+.hl h1 em{color:#c49a3c;font-style:normal}
+.hl .lead{font-size:13px;color:#888;font-weight:300;margin-top:5px;line-height:1.6}
+
+/* CTA TOP */
+.cta-main{margin:14px 0;padding:20px;background:linear-gradient(135deg,#c49a3c,#9a7828);border-radius:10px;text-align:center;box-shadow:0 8px 35px rgba(196,154,60,.15)}
+.cta-main h2{font-family:'DM Serif Display',serif;font-size:16px;color:#0a0a0a;font-weight:400;margin-bottom:3px;line-height:1.35}
+.cta-main p{font-size:11px;color:rgba(10,10,10,.5);margin-bottom:10px;font-weight:300}
+.btn-main{display:inline-block;background:#0a0a0a;color:#c49a3c;padding:13px 44px;font-size:14px;font-weight:600;text-decoration:none;border-radius:6px;transition:all .25s;box-shadow:0 4px 16px rgba(0,0,0,.4);letter-spacing:.3px}
+.btn-main:hover{background:#fff;color:#0a0a0a;transform:translateY(-2px)}
+.cta-main small{display:block;margin-top:5px;font-size:7.5px;color:rgba(10,10,10,.28)}
+
+/* TEXT BLOCKS */
+.tx{padding:10px 0}
+.tx p{font-size:14px;color:#bbb;font-weight:300;line-height:1.85;margin-bottom:11px}
+.tx strong{color:#fff;font-weight:500}
+.tx em{color:#c49a3c;font-style:normal;font-weight:400}
+
+/* QUESTION BLOCK */
+.qblock{text-align:center;padding:6px 0;margin:4px 0}
+.qblock h3{font-family:'DM Serif Display',serif;font-size:18px;color:#fff;font-weight:400;line-height:1.35}
+.qblock h3 em{color:#c49a3c;font-style:normal}
+
+/* IMAGE + TESTIMONIAL */
+.img-card{margin:14px 0;border-radius:8px;overflow:hidden;position:relative}
+.img-card img{width:100%;cursor:pointer;transition:transform .3s}.img-card img:hover{transform:scale(1.02)}
+.img-card .ov{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.88) 35%)}
+.img-card .qt{font-family:'DM Serif Display',serif;font-size:13.5px;color:#eee;font-style:italic;line-height:1.55;margin-bottom:3px}
+.img-card .nm{font-size:9.5px;color:#c49a3c;font-weight:500}
+
+/* REVEAL LIST */
+.rl{margin:14px 0;background:#111;border-radius:8px;overflow:hidden;border:1px solid #1e1e1e}
+.rl-title{padding:11px 16px;font-family:'DM Serif Display',serif;font-size:13.5px;color:#c49a3c;border-bottom:1px solid #1e1e1e}
+.rl-item{padding:9px 16px;border-bottom:1px solid #181818;display:flex;gap:10px;align-items:flex-start}
+.rl-item:last-child{border-bottom:none}
+.rl-dot{color:#c49a3c;font-size:12px;flex-shrink:0;margin-top:2px}
+.rl-txt{font-size:12.5px;color:#bbb;font-weight:300;line-height:1.55}
+.rl-txt strong{color:#fff;font-weight:500}
+
+/* HIGHLIGHT BOX */
+.hbox{margin:14px 0;padding:14px 16px;border-left:3px solid #c49a3c;background:#111;border-radius:0 6px 6px 0}
+.hbox p{font-family:'DM Serif Display',serif;font-size:13.5px;color:#ddd;font-style:italic;line-height:1.6}
+
+/* CTA BOTTOM */
+.cta-end{margin:14px 0;padding:18px;background:#111;border-radius:8px;text-align:center;border:1px solid #c49a3c}
+.cta-end h3{font-family:'DM Serif Display',serif;font-size:15px;color:#fff;margin-bottom:3px;font-weight:400}
+.cta-end p{font-size:10.5px;color:#777;margin-bottom:10px;font-weight:300}
+.cta-end .btn-main{background:#c49a3c;color:#0a0a0a}
+.cta-end .btn-main:hover{background:#fff;color:#0a0a0a}
+.cta-end small{display:block;margin-top:5px;font-size:7.5px;color:#555}
+
+/* DISCLAIMER */
+.disc{font-size:8px;color:#555;margin:14px 0;padding:10px 12px;background:#0d0d0d;border-radius:4px;line-height:1.6;border:1px solid #181818}
+
+/* FOOTER */
+footer{padding:14px 18px 28px;text-align:center;font-size:8px;color:#444}
+footer a{color:#c49a3c;text-decoration:none}footer a:hover{text-decoration:underline}
+
+@media(max-width:600px){
+.hl h1{font-size:19px}
+.qblock h3{font-size:16px}
+.cta-main h2{font-size:14px}
+.hero img{height:280px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<a href="https://lp.metodoproficial.shop/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/mem15-honey-jar-dramatic-Kb9NVqYHQEev8CdH7kaede.webp" alt="Arany méz sötét háttéren"></a>
+<div class="hero-ov"></div>
+</section>
+
+<div class="w">
+
+<!-- HEADLINE -->
+<div class="hl">
+<span class="cat">Egészség &middot; Emlékezet &middot; 2026</span>
+<h1>Mi történik az agyban, ha reggel éhgyomorra <em>mézet eszik?</em></h1>
+<p class="lead">Egy balatoni házaspár története, amely egész Magyarországon elterjedt.</p>
+</div>
+
+<!-- CTA TOP -->
+<div class="cta-main">
+<h2>&#9654; Nézze meg a videót, amely mindent megmagyaráz</h2>
+<p>Hogyan hat a méz az emlékezetre — és miért pont így kell fogyasztani</p>
+<a href="https://lp.metodoproficial.shop/preclick" class="btn-main">Videó megtekintése &rarr;</a>
+<small>Ingyenes tájékoztató tartalom · 3 perc</small>
+</div>
+
+<!-- TEXT -->
+<div class="tx">
+<p>Képzelje el: bemegy a konyhába, és <strong>nem emlékszik, miért ment be.</strong> Találkozik egy régi ismerőssel, és <strong>nem jut eszébe a neve.</strong> Leteszi a szemüvegét, és <strong>öt percen belül elfelejti, hová tette.</strong></p>
+
+<p>A legtöbb ember azt gondolja: <strong>„Ez az öregedés, nincs mit tenni."</strong></p>
+
+<p>De mi van, ha <em>nem ez az igazság?</em></p>
+</div>
+
+<!-- QUESTION -->
+<div class="qblock">
+<h3>Mi van, ha az emlékezet romlásának <em>nem az életkor</em> az egyetlen oka?</h3>
+</div>
+
+<!-- TEXT -->
+<div class="tx">
+<p>Egy <strong>balatoni házaspár</strong> nemrég meglepő felfedezést tett. Mindketten 60 felett vannak, és mindketten észrevették, hogy az emlékezetük <strong>egyre gyengébb.</strong></p>
+
+<p>Aztán egy helyi <strong>méhész</strong> mesélt nekik egy régi receptről — egy <em>mézes keverékről</em>, amelyet a <strong>Balaton-felvidéki idős emberek</strong> generációk óta fogyasztanak reggelente.</p>
+
+<p>Nem hitték el. De <strong>kipróbálták.</strong> És ami utána történt — <em>arra nem számítottak.</em></p>
+</div>
+
+<!-- QUESTION -->
+<div class="qblock">
+<h3>De miért pont <em>a méz?</em><br>És miért nem elég <em>egyedül</em> fogyasztani?</h3>
+</div>
+
+<!-- TEXT -->
+<div class="tx">
+<p>A titok nem magában a mézben van. Hanem abban, <strong>hogyan</strong> és <strong>mivel</strong> kombináljuk. Önmagában a méz csak egy édesítő. De ha <em>ezzel a négy másik összetevővel</em> keverjük össze — és <strong>reggel, éhgyomorra</strong> fogyasztjuk — <em>valami egészen más történik az agyban.</em></p>
+
+<p>A <strong>magyar méhészek</strong> ezt évszázadok óta tudják. De csak most, hogy a <strong>szakemberek megvizsgálták</strong> — értették meg, <em>miért hat.</em></p>
+</div>
+
+<!-- IMAGE + TESTIMONIAL -->
+<div class="img-card">
+<a href="https://lp.metodoproficial.shop/preclick"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297503148/jCMGTU5NUP78zZrraNsLhW/mem15-hungarian-couple-balaton-6ngatdy9rTxtEacvbALbBx.webp" alt="Magyar házaspár a Balatonnál"></a>
+<div class="ov">
+<p class="qt">„Három hónapja csináljuk minden reggel. A feleségem mondta először: 'Tudod, ma nem kerestem a szemüvegemet — mert emlékeztem, hová tettem.' Azóta mindketten érezzük a különbséget."</p>
+<p class="nm">— Szabó László és Mária, 67 és 64 évesek, Balatonfüred</p>
+</div>
+</div>
+
+<!-- REVEAL LIST -->
+<div class="rl">
+<div class="rl-title">Amit megtudhat a videóból:</div>
+<div class="rl-item">
+<span class="rl-dot">&#9670;</span>
+<div class="rl-txt">Mi az a <strong>„rejtett anyag"</strong> a mézben, amely a kutatók szerint <strong>közvetlenül hat az agysejtek közötti kommunikációra</strong></div>
+</div>
+<div class="rl-item">
+<span class="rl-dot">&#9670;</span>
+<div class="rl-txt"><strong>4 másik összetevő</strong>, amely „aktiválja" a méz hatását — és amelyet <strong>minden magyar konyhában megtalál</strong></div>
+</div>
+<div class="rl-item">
+<span class="rl-dot">&#9670;</span>
+<div class="rl-txt">Miért <strong>nem működik</strong>, ha a mézet forró teába teszi — és mi az <strong>egyetlen helyes módszer</strong></div>
+</div>
+<div class="rl-item">
+<span class="rl-dot">&#9670;</span>
+<div class="rl-txt">Miért <strong>reggel, éhgyomorra</strong> a leghatékonyabb — és mit mondanak erről a <strong>Balaton-felvidéki méhészek</strong></div>
+</div>
+</div>
+
+<!-- HIGHLIGHT BOX -->
+<div class="hbox">
+<p>„Nem a méz maga a titok. Hanem az, ami történik, amikor a megfelelő összetevőkkel, a megfelelő időben fogyasztjuk. A legtöbb ember ezt nem tudja."</p>
+</div>
+
+<!-- CTA BOTTOM -->
+<div class="cta-end">
+<h3>Ismerje meg a teljes receptet — lépésről lépésre</h3>
+<p>Pontos összetevők · Helyes arányok · Ideális időpont</p>
+<a href="https://lp.metodoproficial.shop/preclick" class="btn-main">Videó megtekintése &rarr;</a>
+<small>Ingyenes tájékoztató tartalom</small>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disc">
+<strong>Jogi nyilatkozat:</strong> Ez a cikk kizárólag tájékoztató jellegű, és nem minősül orvosi tanácsadásnak. Az étrend-kiegészítők nem helyettesítik a változatos étrendet és az egészséges életmódot. Az eredmények egyénenként eltérőek lehetnek. Bármilyen étrendi változtatás előtt konzultáljon orvosával. A cikkben közölt vélemények az olvasók személyes tapasztalatait tükrözik.
+</div>
+
+</div>
+
+<footer>
+<p><a href="privacy.html">Adatvédelmi irányelvek</a> &middot; <a href="terms.html">Felhasználási feltételek</a></p>
+<p style="margin-top:3px">© <script>document.write(new Date().getFullYear())</script> &middot; CNPJ: 65.066.161/0001-23</p>
+</footer>
+
+<script>
+(function(){var q=window.location.search;if(!q)return;document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(!h||h.startsWith('#')||h.startsWith('mailto:'))return;a.setAttribute('href',h.includes('?')?h+'&'+q.substring(1):h+q)})})();
+</script>
+<script type="text/javascript" src="https://lp.metodoproficial.shop/pretrack.js?rtkcmpid=69e67315654181de9957e73f"></script>
+</body>
+</html>
